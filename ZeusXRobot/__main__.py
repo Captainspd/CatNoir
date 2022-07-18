@@ -79,37 +79,34 @@ def get_readable_time(seconds: int) -> str:
 
 
 PM_START_TEXT = """
-──『[GOD OF THUNDER](https://telegra.ph/file/4c33a90f7df190fd81763.jpg)』──
+──DAWN(https://te.legra.ph/file/5dbf50fffacf489b7dd2e.jpg)』──
 
 *Hello User!!*
-𝐇𝐞𝐲 𝐈'𝐦 [๖ۣۜZΞUS༻](https://en.m.wikipedia.org/wiki/Zeus),👋
-𝐈 𝐀𝐦 𝐀 𝐆𝐫𝐞𝐞𝐤 𝐌𝐲𝐭𝐡𝐨𝐥𝐨𝐠𝐲 𝐆𝐨𝐝 
-𝐀𝐝𝐝 𝐌𝐞 𝐓𝐨 𝐘𝐨𝐮𝐫 𝐆𝐫𝐨𝐮𝐩 𝐈 𝐖𝐢𝐥𝐥 𝐃𝐞𝐬𝐭𝐫𝐨𝐲 𝐄𝐯𝐢𝐥𝐬 𝐖𝐢𝐭𝐡 𝐌𝐲 𝐓𝐡𝐮𝐧𝐝𝐞𝐫...
+𝐇𝐞𝐲 𝐈'𝐦 DAWN(https://en.m.wikipedia.org/wiki/Pokemon_trainer_dawn),👋
+I am a powerful group management bot based on Pokemon anime carecter.🙃🙂
+you can add me in your group and i will protect your group with love and happiness,🥰😘😍
+add me as an admin , i will do my best to make you all happy and safe chatting (◍•ᴗ•◍)❤
 
-──『*ᴛʜᴀɴᴋs  ғᴏʀ  ᴜsɪɴɢ*』"""
-STICKERS = (
-      "CAACAgUAAx0CRiLf0wACvWBhmnKjHrrDcVgz6Ssk5wvA05NLDQACbgIAAv_H2FQTHfy_9X7rfSIE", #1
-      "CAACAgUAAx0CRiLf0wACvWZhmnOJLucdVwga5fnQJ0i7tD6nIgACsAQAAq042VQYQWM0cthfbyIE", #2
-)
+──『⊂((・▽・))⊃(｡♡‿♡｡)⊂((・▽・))⊃』"""
+
 
 buttons = [
     [
         InlineKeyboardButton(
-                            text="☑️ SUBMIT GOD ZEUS ☑️",
-                            url="t.me/ZeusXRobot?startgroup=true"),
+                            text="☑️ SUBMIT DAWN ☑️",
+                            url="t.me/Miss_Dawn_bot?startgroup=true"),
                     ],
-                   [
-                       InlineKeyboardButton(text="🤖 Stats", callback_data="zeus_info"),
-                       InlineKeyboardButton(text="📊 Network", url="t.me/PegasusXteam"),
-                       InlineKeyboardButton(text="🔔 Logs", url="t.me/pegasusLogs"),
+                 [
+                       InlineKeyboardButton(text="📊 Network", url="t.me/dawnbotofficial"),
+                       InlineKeyboardButton(text="🔔 Logs", url="t.me/dawnbotofficial"),
                      ],
                     [                  
                        InlineKeyboardButton(
-                             text="👫 Freedom",
-                             url=f"https://t.me/UnitedSupport"),
+                             text="👫 chatroom",
+                             url=f"https://t.me/dawnbotofficial"),
                        InlineKeyboardButton(
-                             text="⚡ ZeusUpdates",
-                             url=f"https://t.me/{UPDATES_CHANNEL}"),
+                             text="❤️ DAWN_Updates",
+                             url=f"https://t.me/dawnbotofficial"),
                      ],
                     [
                     InlineKeyboardButton(text="🔐 Open commads 🔐", callback_data="help_back"
@@ -118,14 +115,14 @@ buttons = [
 ] 
 
 HELP_STRINGS = """
-Hi there, I'm *{}*!
+Hi there, I'm DAWN!
 To make me functional, make sure that i have enough rights in your group.
 Helpful commands:
 - /start: Starts me! You've probably already used this.
 - /help: Sends this message; I'll tell you more about myself!
 - /donate: Gives you info on how to support me and my creator.
-If you want to report bugs or have any questions on how to use me then feel free to reach out: @ZeusSupportChat.
-All commands can be used with the following: *(/),(!),(?),(.),(~)*[!](https://telegra.ph/file/648aca75adfb9533a2161.jpg)
+If you want to report bugs or have any questions on how to use me then feel free to reach out:- t.me/dawnbotofficial.
+All commands can be used with the following: *(/),(!),(?),(.),(~)*[!](https://te.legra.ph/file/29f23551751a22bc6a7cc.jpg)
 List of all the Modules:
 """.format(
     dispatcher.bot.first_name,
@@ -133,8 +130,8 @@ List of all the Modules:
 )
 
 HELP_MSG = "Click the button below to get help manu in your pm."
-DONATE_STRING = """t.me/unitedsupport"""
-HELP_IMG= "https://telegra.ph/file/5f296f959250d7cd88b09.jpg"
+
+HELP_IMG= "https://te.legra.ph/file/29f23551751a22bc6a7cc.jpg"
 
 
 IMPORTED = {}
@@ -148,7 +145,7 @@ CHAT_SETTINGS = {}
 USER_SETTINGS = {}
 
 for module_name in ALL_MODULES:
-    imported_module = importlib.import_module("ZeusXRobot.modules." + module_name)
+    imported_module = importlib.import_module("Miss_Dawn_bot.modules." + module_name)
     if not hasattr(imported_module, "__mod_name__"):
         imported_module.__mod_name__ = imported_module.__name__
 
@@ -249,15 +246,15 @@ def start(update: Update, context: CallbackContext):
     else:
         first_name = update.effective_user.first_name
         update.effective_message.reply_text(
-            "*hello! {},*\n*Zeus here for you*\n*Working time* : {} ".format(
+            "*hello! {},*\n*dawn here for you*\n*Working time* : {} ".format(
              first_name,uptime
             ),
             parse_mode=ParseMode.MARKDOWN,
         reply_markup=InlineKeyboardMarkup(
                 [
                   [
-                  InlineKeyboardButton(text=" Support ", url=f"t.me/{SUPPORT_CHAT}"),
-                  InlineKeyboardButton(text=" Updates ", url=f"t.me/{UPDATES_CHANNEL}"),
+                  InlineKeyboardButton(text=" Support ", url=f"t.me/dawnbotofficial"),
+                  InlineKeyboardButton(text=" Updates ", url=f"t.me/dawnbotofficial"),
                   ]
                 ]
             ),
@@ -336,7 +333,7 @@ def help_button(update, context):
         if mod_match:
             module = mod_match.group(1)
             text = (
-                "*Powered By @PegasusXteam*\n *Module Name:*`{}`\n".format(
+                "*Powered By @C_A_P_T_A_I_N_P*\n *Module Name:*`{}`\n".format(
                     HELPABLE[module].__mod_name__
                 )
                 + HELPABLE[module].__help__
@@ -417,14 +414,14 @@ def zeus_data_callback(update, context):
     elif query.data == "zeus_info":
         botuptime = get_readable_time((time.time() - StartTime))
         query.message.edit_text(
-            text="*🤖 BOT* : `Alive`\n*⚡ UPTIME* : `{}`\n*💫 PYTHON* : `{}`\n🌠 PTB* : `{}`\n*🙄REPO* : `Private`\n".format(botuptime,python_version,ptbver),parse_mode=ParseMode.MARKDOWN,
+            text="*🤖 BOT* : `Alive`\n*❤️ UPTIME* : `{}`\n*💫 PYTHON* : `{}`\n🌠 PTB* : `{}`\n*🙄REPO* :(no repo),
             reply_markup=InlineKeyboardMarkup(
                 [
                  [
                     InlineKeyboardButton(text="🔄 Go Inline 🔄", switch_inline_query_current_chat=""),
                  ],
                   [
-                    InlineKeyboardButton(text="📢 Updates", url="t.me/PegasusUpdates"),
+                    InlineKeyboardButton(text="📢 Updates", url="t.me/dawnbotofficial"),
                  ],
                  [
                     InlineKeyboardButton(text="⬅ Back", callback_data="zeus_back"),
@@ -712,7 +709,7 @@ def main():
 
     if SUPPORT_CHAT is not None and isinstance(SUPPORT_CHAT, str):
         try:
-            dispatcher.bot.sendMessage(f"@{SUPPORT_CHAT}","*Zeus Is Ready ⚡*", parse_mode=ParseMode.MARKDOWN) 
+            dispatcher.bot.sendMessage(f"@Miss_Dawn_bot","*DAWN Is Ready ❤️*", parse_mode=ParseMode.MARKDOWN) 
         except Unauthorized:
             LOGGER.warning(
                 "Bot isnt able to send message to support_chat, go and check!",
